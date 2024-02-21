@@ -17,9 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="">
-      <Nav />
-      <body className={nunito.className}>{children}</body>
-    </main>
+    <html lang="en" className="">
+      <body className={nunito.className}>
+        <Nav />
+        {children}
+      </body>
+    </html>
   );
 }
