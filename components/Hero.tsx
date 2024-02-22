@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="flex justify-between pr-16">
         {/* left */}
         <div className="flex flex-col">
-          <h1 className=" w-[600px]">
+          <h1 className=" w-[512px]">
             Malaysian Diaspora Innovation Center
           </h1>
           <p className="text-black font-normal text-xl mt-2">

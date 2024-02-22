@@ -27,7 +27,7 @@ const Nav = () => {
   ];
 
   return (
-    <div className="flex flex-row py-10 px-40 items-center justify-between">
+    <div className="flex flex-row py-10 px-40 max-[1440px]:px-20 items-center justify-between">
       <div className="flex items-center">
         <Image src="logo-favicon.svg" alt="Ashva Logo" width={40} height={40} />
         <h2 className="font-bold ml-8 text-4xl">Ashva</h2>
@@ -45,7 +45,7 @@ const Nav = () => {
         ))}
       </div>
 
-      <div className="bg-black text-white px-5 py-4 rounded-[20px]">
+      <div className="bg-black text-white px-5 py-4 rounded-[20px] cursor-pointer">
         Share Your Initiative
       </div>
     </div>
