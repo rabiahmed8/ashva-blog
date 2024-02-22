@@ -103,7 +103,7 @@ const AboutSection = () => {
         ))}
       </div>
 
-      {objectives[objToggle].key == objToggle && (
+      {objectives[objToggle].key === objToggle && (
         <p className="pt-12 text-2xl font-normal">
           {objectives[objToggle].content}
         </p>
