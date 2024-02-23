@@ -1,19 +1,39 @@
-import React from "react";
+'use client'
+import React, { useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { getBlogImage, getBlogList } from "@/apiCalls/apiCalls";
 
 const BlogSection = () => {
+  //  const blogList
+
+  const base_url = "https://ashva.pythonanywhere.com/";
+
+  useEffect(() => {
+
+    getBlogList(base_url).then((data) => {
+      console.log(data);
+    });
+
+    getBlogImage(base_url).then((data) => {
+      console.log(data);
+    });
+  }, []);
+
+
+
+
   return (
     <div className="py-20">
       <div className="flex items-center">
-        <span className="font-normal text-2xl">Read the blog</span>
-        <Image src="/arrow-icon.png"
-        alt="arrow Icon"
-        width={30}
-        height={30}
-        />
+        <Link href={"/blog"} className="font-normal text-2xl">
+          Read the blog{" "}
+        </Link>
+        {/* <span className="font-normal text-2xl">Read the blog</span> */}
+        <Image src="/arrow-icon.png" alt="arrow Icon" width={30} height={30} />
       </div>
 
-      <div className="pt-20 flex gap-11">
+      <div className="pt-10 flex gap-11">
         <div className="flex flex-col gap-4">
           <h1 className="font-bold text-2xl">Solving the Flood Problem</h1>
           <Image

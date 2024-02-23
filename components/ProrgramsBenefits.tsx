@@ -47,31 +47,31 @@ const ProrgramsBenefits = () => {
         "Showcase Malaysia's talent and innovation potential on the international stage, attracting further investment and partnerships.",
     },
     {
-      key: 0,
+      key: 1,
       heading: "Economic Growth",
       content:
         "Drive the creation of new businesses, jobs, and industries, contributing significantly to Malaysia's GDP.",
     },
     {
-      key: 0,
+      key: 2,
       heading: "Technological Advancement",
       content:
         "Bridge the technology gap by leveraging cutting-edge knowledge and expertise from U.S. universities.",
     },
     {
-      key: 0,
+      key: 3,
       heading: "Talent Repatriation",
       content:
         "Encourage skilled Malaysians to return and contribute their expertise, enriching the local talent pool.",
     },
     {
-      key: 0,
+      key: 4,
       heading: "National Pride",
       content:
-        " Inspire the next generation of innovators and entrepreneurs, fostering a culture of creativity and ambition.",
+        "Inspire the next generation of innovators and entrepreneurs, fostering a culture of creativity and ambition.",
     },
     {
-      key: 0,
+      key: 5,
       heading: "Sustainable Talent Pipeline",
       content:
         "Attract and retain top talent by providing continuous learning and development opportunities through university partnerships.",

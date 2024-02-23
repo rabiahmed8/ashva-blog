@@ -36,7 +36,7 @@ const ContactForm = () => {
           placeholder="What are you building/
               Any event you want to share /
               An Idea that needs funding"
-          className="border-2 border-black rounded-[20px] py-3 px-5 text-xl font-normal resize-none no-scrollbar"
+          className="border-2 border-black rounded-[20px] h-[170px] py-3 px-5 text-xl font-normal resize-none no-scrollbar"
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
             setMessage(e.target.value);
           }}

@@ -73,7 +73,7 @@ const AboutSection = () => {
       </div>
 
       <h1 className="py-12">Objectives</h1>
-      <div className="flex ">
+      <div className="flex flex-wrap gap-4">
         {objectives.map(({ key, heading }) => (
           <div
             key={key}
@@ -81,8 +81,8 @@ const AboutSection = () => {
               setObjToggle(key);
             }}
             className={`${objToggle == key ? "bg-black text-white" : ""}
-              ${key == 0 ? "ml-0" : ""}
-              flex items-end py-4 px-6 ml-4 border-[3px] border-black text-xl font-medium cursor-pointer transition-all`}
+              ${key == 0 ? "first-button" : ""}
+              flex  items-end py-4 px-6 flex-grow place-content-center border-[3px] border-black text-xl font-medium cursor-pointer transition-all`}
           >
             {heading}{" "}
             <span

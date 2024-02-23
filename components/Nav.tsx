@@ -27,26 +27,35 @@ const Nav = () => {
   ];
 
   return (
-    <div className="flex flex-row py-10 px-40 max-[1440px]:px-20 items-center justify-between">
-      <div className="flex items-center">
-        <Image src="logo-favicon.svg" alt="Ashva Logo" width={40} height={40} />
-        <h2 className="font-bold ml-8 text-4xl">Ashva</h2>
-      </div>
+    <div className="fixed w-full">
+      <div className="flex flex-row py-5 px-40 max-[1440px]:px-20 max-[1024px]:px-4 items-center justify-between bg-[#ffffff]">
+        <div className="flex items-center">
+          <Image
+            src="logo-favicon.svg"
+            alt="Ashva Logo"
+            width={40}
+            height={40}
+          />
+          <h2 className="font-bold ml-8 text-4xl">Ashva</h2>
+        </div>
 
-      <div className="flex gap-10">
-        {navLinks.map(({ name, link }) => (
-          <Link
-            key={name}
-            href={link}
-            className={`${pathname == link ? "text-black" : "text-[#8C8C8C] "} text-xl`}
-          >
-            {name}
-          </Link>
-        ))}
-      </div>
+        <div className="flex gap-10">
+          {navLinks.map(({ name, link }) => (
+            <Link
+              key={name}
+              href={link}
+              className={`${
+                pathname == link ? "text-black" : "text-[#8C8C8C] "
+              } text-xl`}
+            >
+              {name}
+            </Link>
+          ))}
+        </div>
 
-      <div className="bg-black text-white px-5 py-4 rounded-[20px] cursor-pointer">
-        Share Your Initiative
+        <div className="bg-black text-white px-5 py-4 rounded-[20px] cursor-pointer">
+          Share Your Initiative
+        </div>
       </div>
     </div>
   );
