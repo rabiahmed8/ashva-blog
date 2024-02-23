@@ -1,8 +1,8 @@
-import AboutSection from "@/components/AboutSection";
-import BlogSection from "@/components/BlogSection";
-import ContactForm from "@/components/ContactForm";
-import Hero from "@/components/Hero";
-import ProrgramsBenefits from "@/components/ProrgramsBenefits";
+import AboutSection from "@/app/components/AboutSection";
+import BlogSection from "@/app/components/BlogSection";
+import ContactForm from "@/app/components/ContactForm";
+import Hero from "@/app/components/Hero";
+import ProrgramsBenefits from "@/app/components/ProrgramsBenefits";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 

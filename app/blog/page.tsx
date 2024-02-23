@@ -1,5 +1,5 @@
 "use client";
-import { getBlogContent } from "@/apiCalls/apiCalls";
+import { getBlogContent } from "@/app/apiCalls/apiCalls";
 import Image from "next/image";
 import React, { useEffect } from "react";
 

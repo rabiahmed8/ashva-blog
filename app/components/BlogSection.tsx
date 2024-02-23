@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { getBlogImage, getBlogList } from "@/apiCalls/apiCalls";
+import { getBlogImage, getBlogList } from "@/app/apiCalls/apiCalls";
 
 const BlogSection = () => {
   //  const blogList
