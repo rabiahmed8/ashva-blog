@@ -9,13 +9,13 @@ const ContactForm = () => {
   return (
     <div className="py-20">
       <h1>Share your Initiative </h1>
-      <div className="flex flex-col w-[600px] gap-3 pt-10">
+      <div className="flex flex-col max-w-[600px] gap-3 pt-10">
         <div className="flex gap-3">
           <input
             type="text"
             value={name}
             placeholder="Name"
-            className="border-2 border-black rounded-[20px] py-3 px-5 text-xl font-normal flex-grow"
+            className="border-2 border-black rounded-[20px] py-3 px-5 text-xl font-normal flex-grow w-full"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setName(e.target.value);
             }}
@@ -24,7 +24,7 @@ const ContactForm = () => {
             type="text"
             value={college}
             placeholder="College / Affliliation"
-            className="border-2 border-black rounded-[20px] py-3 px-5 text-xl font-normal flex-grow"
+            className="border-2 border-black rounded-[20px] py-3 px-5 text-xl font-normal flex-grow w-full"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setCollege(e.target.value);
             }}

@@ -8,7 +8,7 @@ const Blog = () => {
 
   useEffect(() => {
     getBlogContent(base_url).then((data) => {
-      console.log(data);
+      console.log('getBlogContent: ',data);
     });
   }, []);
 

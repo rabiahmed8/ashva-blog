@@ -1,51 +1,19 @@
-"use client";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Pin from "./Pin";
+import ToolTip from "./ToolTip";
+import PinFramer, { PinContent } from "./pinFramer";
 
 const Hero = () => {
-  const [pinPosition, setPinPosition] = useState<{ x: number; y: number }>({
-    x: 6,
-    y: 385,
-  });
-  const [pinSize, setPinSize] = useState(20);
 
-  useEffect(() => {
-    const handleResize = () => {
-      // Recalculate pin position when window is resized
-      const mapImage = document.querySelector(".image") as HTMLElement;
-      const pin = document.querySelector(".test") as HTMLElement;
-      console.log("left: ", pin.style.left, "top: ", pin.style.top);
-
-      if (mapImage) {
-        const mapWidth = mapImage.clientWidth;
-        const mapHeight = mapImage.clientHeight;
-        console.log("image size: ", mapWidth, mapHeight);
-
-        const pinLeftPercentage = (pinPosition.x / mapWidth) * 100;
-        const pinTopPercentage = (pinPosition.y / mapHeight) * 100;
-
-        const pinX = (pinPosition.x * mapHeight) / 933;
-        const pinY = (pinPosition.y * mapWidth) / 1400;
-
-        console.log("pin Position: ", pinX, pinY);
-
-        // Update pin position
-        setPinPosition({ x: pinX, y: pinY });
-      }
-    };
-
-    // Add event listener for window resize
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup function to remove event listener
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const anything:PinContent[]=[
+    { x: 10, y: 20, css: 'pin-1', message: 'Message 1' },
+    { x: 30, y: 40, css: 'pin-2', message: 'Message 2' },
+    { x: 50, y: 60, css: 'pin-3', message: 'Message 3' },
+  ]
 
   const pins = [
-    { key: 0, lat: pinPosition.x, long: pinPosition.y },
+    { key: 0, lat: 6, long: 385 },
     // { key: 1, lat: 165, long: 1140 },
     // { key: 1, lat: 52, long: 52 },
     // { key: 1, lat: 52, long: 52 },
@@ -64,10 +32,10 @@ const Hero = () => {
   return (
     <div className="py-20">
       {/* first block */}
-      <div className="flex justify-between pr-16">
+      <div className="flex justify-between pr-16 max-[1000px]:flex-col max-[1000px]:gap-[30px] place-content-center">
         {/* left */}
         <div className="flex flex-col">
-          <h1 className=" w-[512px]">Malaysian Diaspora Innovation Center</h1>
+          <h1 className="max-w-[512px]">Malaysian Diaspora Innovation Center</h1>
           <p className="text-black font-normal text-xl mt-2">
             Harnessing Talent, Igniting Progress
           </p>
@@ -111,18 +79,34 @@ const Hero = () => {
           alt="USA Map"
           width={1200}
           height={800}
-          className="w-[1400px] image"
+          className="w-[1400px] max-[1730px]:w-[860px] max-[900px]:w-[460px] max-[500px]:w-[286px]"
         />
-        {pins.map(
-          ({ key, lat, long }: { key: number; lat: number; long: number }) => (
-            <Pin
+
+        <div className="absolute washington">
+          <PinFramer
+          />
+        </div>
+
+          {/* <img
+            src="/usa-map.png"
+            alt="USA Map"
+            className="map-image"
+          /> */}
+          {/* {pins.map(
+            ({ key, lat, long }: { key: number; lat: number; long: number }) => (
+              // eslint-disable-next-line react/jsx-key
+              <ToolTip
               key={key}
-              lat={pinPosition.x}
-              long={pinPosition.y}
-              pinSize={pinSize}
-            />
-          )
-        )}
+              message={"Tooltip Message"}
+              >
+              <Pin
+                key={key}
+                lat={lat}
+                long={long}
+              />
+              </ToolTip>
+            )
+          )} */}
 
         <p className="font-normal text-2xl mt-6">
           Malaysian Graduates in the USA

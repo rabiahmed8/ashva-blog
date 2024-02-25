@@ -330,7 +330,6 @@ h1 {
   -o-animation: pin-shadow 1.5s 1.5s forwards;
   animation: pin-shadow 1.5s 1.5s forwards;
 }
-
 .pin-img{
     background-image: url(/pin.png);
     width: 20px;
@@ -339,4 +338,45 @@ h1 {
     margin-left: -56.5px;
     left: 100px;
     top: -77px;
+}
+
+.map-image{
+  max-width: 1200px !important;
+  height: auto !important;
+}
+
+.pin-shadow2{
+  width: 20px;
+  height: 10px;
+  background-color: rgba(120, 120, 120, 0.5);
+  border-radius: 100%;
+}
+
+.blogH{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+          line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.washington{
+  top: 102px;
+  left: 348px;
+}
+
+
+@media screen and (max-width: 1730px) {
+  .washington{
+    top: 56px;
+    left: 209px;
+  }
+
+}
+@media screen and (max-width: 900px) {
+  .washington{
+    top: 42px;
+    left: 176px;
+  }
+
 }

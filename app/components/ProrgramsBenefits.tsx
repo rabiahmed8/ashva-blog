@@ -85,7 +85,7 @@ const ProrgramsBenefits = () => {
         {programs.map(({ key, heading, content }) => (
           <div
             key={key}
-            className="flex flex-col bg-[#D9D9D9] rounded-xl px-10 py-14 w-[450px] aspect-square justify-between"
+            className="flex flex-col bg-[#D9D9D9] rounded-xl px-10 py-14 max-w-[450px] aspect-square justify-between"
           >
             <p className="text-2xl font-normal text-center">{heading}</p>
             <p className="text-lg font-normal text-center">{content}</p>
@@ -98,7 +98,7 @@ const ProrgramsBenefits = () => {
         {benefits.map(({ key, heading, content }) => (
           <div
             key={key}
-            className="flex flex-col bg-[#D9D9D9] rounded-xl px-10 py-14 w-[450px] aspect-square justify-between"
+            className="flex flex-col bg-[#D9D9D9] rounded-xl px-10 py-14 max-w-[450px] aspect-square justify-between"
           >
             <p className="text-2xl font-normal text-center">{heading}</p>
             <p className="text-lg font-normal text-center">{content}</p>

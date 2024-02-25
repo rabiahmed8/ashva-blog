@@ -41,8 +41,8 @@ const AboutSection = () => {
   return (
     <div className="py-20">
       {/* vision / Mission */}
-      <div className="flex gap-20">
-        <div className="w-[30rem]">
+      <div className="flex gap-20 flex-wrap">
+        <div className="max-w-[30rem]">
           <h1 className="font-bold text-5xl">Vision</h1>
           <p className="font-normal text-2xl pt-6">
             To be a <span className="text-3xl text-[#EE8C19]">vibrant hub</span>{" "}
@@ -55,7 +55,7 @@ const AboutSection = () => {
             <span className="text-3xl text-[#EE8C19]">economic growth.</span>
           </p>
         </div>
-        <div className="w-[30rem]">
+        <div className="max-w-[30rem]">
           <h1 className="font-bold text-5xl">Mission</h1>
           <p className="font-normal text-2xl pt-6">
             To attract, nurture, and support{" "}
