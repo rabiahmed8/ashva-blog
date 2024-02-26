@@ -6,27 +6,34 @@ import PinFramer, { PinContent } from "./pinFramer";
 
 const Hero = () => {
 
-  const anything:PinContent[]=[
-    { x: 10, y: 20, css: 'pin-1', message: 'Message 1' },
-    { x: 30, y: 40, css: 'pin-2', message: 'Message 2' },
-    { x: 50, y: 60, css: 'pin-3', message: 'Message 3' },
-  ]
-
-  const pins = [
-    { key: 0, lat: 6, long: 385 },
-    // { key: 1, lat: 165, long: 1140 },
-    // { key: 1, lat: 52, long: 52 },
-    // { key: 1, lat: 52, long: 52 },
-    // { key: 1, lat: 52, long: 52 },
-    // { key: 1, lat: 52, long: 52 },
-    // { key: 1, lat: 52, long: 52 },
-    // { key: 1, lat: 52, long: 52 },
-    // { key: 1, lat: 52, long: 52 },
-    // { key: 1, lat: 52, long: 52 },
-    // { key: 1, lat: 52, long: 52 },
-    // { key: 1, lat: 52, long: 52 },
-    // { key: 1, lat: 52, long: 52 },
-    // { key: 1, lat: 52, long: 52 },
+  const pins:PinContent[]=[
+    { key: 0, className: "washington", message: "Washington" },
+    { key: 1, className: "Berkeley", message: "Berkeley" },
+    { key: 2, className: "Stanford", message: "Stanford" },
+    { key: 3, className: "CMU", message: "CMU" },
+    { key: 4, className: "UCLA", message: "UCLA" },
+    { key: 5, className: "Caltech", message: "Caltech" },
+    { key: 6, className: "USC", message: "USC" },
+    { key: 7, className: "UCSD", message: "UCSD" },
+    { key: 8, className: "Rice", message: "Rice" },
+    { key: 9, className: "WashU", message: "WashU" },
+    { key: 10, className: "UIC", message: "UIC" },
+    { key: 11, className: "UMich", message: "UMich" },
+    { key: 12, className: "NotreDame", message: "Notre Dame" },
+    { key: 13, className: "Purdue", message: "Purdue" },
+    { key: 14, className: "Vanderbilt", message: "Vanderbilt" },
+    { key: 15, className: "GeorgiaTech", message: "Georgia Tech" },
+    { key: 16, className: "Duke", message: "Duke" },
+    { key: 17, className: "VirginiaTech", message: "Virginia Tech" },
+    { key: 18, className: "Georgetown", message: "Georgetown" },
+    { key: 19, className: "JohnsHopkins", message: "Johns Hopkins" },
+    { key: 20, className: "UPenn", message: "UPenn" },
+    { key: 21, className: "Princeton", message: "Princeton" },
+    { key: 22, className: "Columbia", message: "Columbia" },
+    { key: 23, className: "Yale", message: "Yale" },
+    { key: 24, className: "MIT", message: "MIT" },
+    { key: 25, className: "Brown", message: "Brown" },
+    { key: 26, className: "Cornell", message: "Cornell" }
   ];
 
   return (
@@ -82,10 +89,16 @@ const Hero = () => {
           className="w-[1400px] max-[1730px]:w-[860px] max-[900px]:w-[460px] max-[500px]:w-[286px]"
         />
 
-        <div className="absolute washington">
+        {pins.map(({key,className,message})=>(
+
+        <div key={key} className={`absolute ${className}`}>
           <PinFramer
+          key={key}
+          className={className}
+          message={message}
           />
         </div>
+        ))}
 
           {/* <img
             src="/usa-map.png"

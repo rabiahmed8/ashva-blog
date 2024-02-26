@@ -8,7 +8,7 @@ import ProrgramsBenefits from "@/app/components/ProrgramsBenefits";
 export default function Home() {
   return (
     <div className="px-40 max-[1440px]:px-20 max-[1150px]:px-4 pt-16">
-      <Hero />
+      <Hero  />
       <BlogSection />
       <AboutSection />
       <ProrgramsBenefits />
