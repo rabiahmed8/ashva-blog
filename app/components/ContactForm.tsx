@@ -1,10 +1,32 @@
 "use client";
 import React, { useState } from "react";
+import { contactForm } from "../apiCalls/apiCalls";
+
+export interface Details {
+  fname:string;
+  email:string;
+  suggestion:string;
+}
 
 const ContactForm = () => {
   const [name, setName] = useState("");
-  const [college, setCollege] = useState("");
+  const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  const BASE_URL_3 = 'https://ashva.pythonanywhere.com/waitlist';
+
+  const details:Details = {
+    fname: name,
+    email: email,
+    suggestion: message
+  };
+
+  const handleClick = async () =>{
+    await contactForm(BASE_URL_3,details)
+    setName('')
+    setEmail('')
+    setMessage('')
+  }
 
   return (
     <div className="py-20">
@@ -22,11 +44,11 @@ const ContactForm = () => {
           />
           <input
             type="text"
-            value={college}
-            placeholder="College / Affliliation"
+            value={email}
+            placeholder="Email"
             className="border-2 border-black rounded-[20px] py-3 px-5 text-xl font-normal flex-grow w-full"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              setCollege(e.target.value);
+              setEmail(e.target.value);
             }}
           />
         </div>
@@ -43,7 +65,7 @@ const ContactForm = () => {
         />
 
         {/* hover:border-2 hover:border-black hover:bg-white hover:text-black */}
-        <button className="bg-[#1E1C1C] py-3 rounded-[20px] text-white  transition-all">Submit</button>
+        <button onClick={handleClick} className="bg-[#1E1C1C] py-3 rounded-[20px] text-white  transition-all">Submit</button>
       </div>
     </div>
   );

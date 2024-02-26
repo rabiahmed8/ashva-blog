@@ -1,5 +1,5 @@
 "use client";
-import { getBlogContent } from "@/app/apiCalls/apiCalls";
+import { contactForm, getBlogContent } from "@/app/apiCalls/apiCalls";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
@@ -17,42 +17,46 @@ interface BlogData {
 const Blog = () => {
   const base_url = "https://ashva.pythonanywhere.com/";
 
+
   const [data, setData] = useState<BlogData | null>(null);
 
   useEffect(() => {
-    getBlogContent(base_url).then((data:BlogData) => {
-      console.log('getBlogContent: ',data);
-      setData(data)
-    })
+    getBlogContent(base_url)
+      .then((blogData: BlogData) => {
+        console.log("getBlogContent: ", blogData);
+        setData(blogData);
+      })
       .catch((error) => {
-        console.error('Error fetching blog content:', error);
-    });
+        console.error("Error fetching blog content:", error);
+      });
   }, []);
 
   return (
     <div className="px-40 max-[1440px]:px-20 max-[1024px]:px-4 pt-36">
-      <h2 className="font-bold text-4xl">
-        Taming the Torrent: How US Technology Can Help Malaysia Weather the
-        Flood
+      <h2 className="font-bold text-3xl max-w-[1200px]">
+        {/* Taming the Torrent: How US Technology Can Help Malaysia Weather the
+        Flood */}
+        {data?.intro_text}
       </h2>
-      <p className="font-normal text-2xl">
-        Why Floods are tough in Malaysia and what U.S. technology is working
-      </p>
-      <Image src="/blog-1.png" alt="Blog thumbnail" width={400} height={340} />
-      <p className="font-normal text-xl">
-        Floods are a recurring nightmare for Malaysia, displacing thousands,
-        damaging infrastructure, and costing billions. But amidst the
-        devastation lies an opportunity for collaboration and innovation. By
-        leveraging US technology and expertise, Malaysia can build resilience
-        and weather these storms more effectively.
-      </p>
-      <h2 className="font-bold text-3xl">Understanding the Landscape:</h2>
-      <p className="font-normal text-xl">
-        Flooding in Malaysia stems from a complex interplay of factors - heavy
-        rainfall, deforestation, inadequate drainage systems, and rapid
-        urbanization. Addressing these challenges requires a multi-pronged
-        approach, utilizing advanced tools and knowledge transfer.
-      </p>
+      <p className="font-normal text-xl pt-3">{data?.subtitle}</p>
+      <Image
+        className="pt-7"
+        src="/blog-1.png"
+        alt="Blog thumbnail"
+        width={400}
+        height={340}
+      />
+
+      {data?.sections.map(({ heading, paragraph }, index) => (
+        <div key={index} className="max-w-[1000px]">
+          <h2 className="font-bold text-2xl pt-7">
+            {heading}
+          </h2>
+          <p className="font-normal text-xl pt-3">
+            {paragraph}
+          </p>
+        </div>
+      ))}
     </div>
   );
 };
