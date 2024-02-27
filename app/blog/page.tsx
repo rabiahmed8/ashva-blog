@@ -2,17 +2,9 @@
 import { contactForm, getBlogContent } from "@/app/apiCalls/apiCalls";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { BlogData } from "../constants/DTO";
 
-interface BlogData {
-  blog_id: string;
-  title: string;
-  subtitle: string;
-  img_src: string;
-  intro_text: string;
-  author: string;
-  timestamp: string;
-  sections: { heading: string; paragraph: string }[];
-}
+
 
 const Blog = () => {
   const base_url = "https://ashva.pythonanywhere.com/";
@@ -23,7 +15,7 @@ const Blog = () => {
   useEffect(() => {
     getBlogContent(base_url)
       .then((blogData: BlogData) => {
-        console.log("getBlogContent: ", blogData);
+        // console.log("getBlogContent: ", blogData);
         setData(blogData);
       })
       .catch((error) => {

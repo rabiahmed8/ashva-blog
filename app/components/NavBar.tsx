@@ -7,36 +7,8 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
-  const pathname = usePathname();
-  console.log(pathname)
 
   const [linkClass,setLinkClass]=useState('/#home')
-
-  const scrollToRef = (ref: React.RefObject<HTMLDivElement>) => {
-    if (ref.current) {
-      window.scrollTo({
-        top: ref.current.offsetTop,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  // const handleClick = (link: string) => {
-  //   switch (link) {
-  //     case 'home':
-  //       scrollToRef(homeRef);
-  //       break;
-  //     case 'about':
-  //       scrollToRef(aboutRef);
-  //       break;
-  //     case 'contact':
-  //       scrollToRef(contactRef);
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // };
-
   const [nav, setNav] = useState(false);
 
   const links = [
@@ -121,7 +93,7 @@ const Navbar = () => {
       </ul>
 
       <Link
-        href={"#contact"}
+        href={"/#contact"}
         className="bg-black text-white px-5 py-4 rounded-[20px] cursor-pointer"
       >
         Share Your Initiative
