@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Nunito } from "next/font/google";
 import "./globals.css";
-import Nav from "@/app/components/Nav";
 import Footer from "@/app/components/Footer";
 import Navbar from "./components/NavBar";
 
@@ -21,7 +20,6 @@ export default function RootLayout({
   return (
     <html className='scroll-smooth' lang="en" >
       <body className={nunito.className}>
-        {/* <Nav /> */}
         <Navbar />
         {children}
         <Footer/>

@@ -3,13 +3,9 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { getBlogImage, getBlogList } from "@/app/apiCalls/apiCalls";
+import { Blog } from "../constants/DTO";
 
-interface Blog {
-  id: number;
-  title: string;
-  timestamp: string;
-  img_src: string;
-}
+
 
 const BlogSection = () => {
   //  const blogList

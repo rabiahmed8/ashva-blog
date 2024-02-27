@@ -1,12 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { contactForm } from "../apiCalls/apiCalls";
+import { Details } from "../constants/DTO";
 
-export interface Details {
-  fname:string;
-  email:string;
-  suggestion:string;
-}
+
 
 const ContactForm = () => {
   const [name, setName] = useState("");

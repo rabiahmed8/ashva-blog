@@ -1,9 +1,5 @@
 import React, { ReactNode } from "react";
-
-interface TooltipProps {
-  message: string;
-  children: ReactNode;
-}
+import { TooltipProps } from "../constants/DTO";
 
 const ToolTip = ({ message, children }: TooltipProps) => {
   return (

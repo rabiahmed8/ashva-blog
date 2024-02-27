@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Details } from '../components/ContactForm';
+import { Details } from '../constants/DTO';
 
 
 export async function getBlogList(base_url:string) {

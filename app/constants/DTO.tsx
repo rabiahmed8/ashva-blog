@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface PinContent {
     key?: number;
     className?: string;
@@ -13,4 +15,22 @@ export interface BlogData {
     author: string;
     timestamp: string;
     sections: { heading: string; paragraph: string }[];
+  }
+
+  export interface Blog {
+    id: number;
+    title: string;
+    timestamp: string;
+    img_src: string;
+  }
+
+  export interface Details {
+    fname:string;
+    email:string;
+    suggestion:string;
+  }
+
+  export interface TooltipProps {
+    message: string;
+    children: ReactNode;
   }
