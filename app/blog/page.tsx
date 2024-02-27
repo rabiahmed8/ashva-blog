@@ -4,11 +4,8 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { BlogData } from "../constants/DTO";
 
-
-
 const Blog = () => {
   const base_url = "https://ashva.pythonanywhere.com/";
-
 
   const [data, setData] = useState<BlogData | null>(null);
 
@@ -25,30 +22,63 @@ const Blog = () => {
 
   return (
     <div className="px-40 max-[1440px]:px-20 max-[1024px]:px-4 pt-36">
-      <h2 className="font-bold text-3xl max-w-[1200px]">
-        {/* Taming the Torrent: How US Technology Can Help Malaysia Weather the
-        Flood */}
-        {data?.intro_text}
-      </h2>
-      <p className="font-normal text-xl pt-3">{data?.subtitle}</p>
-      <Image
-        className="pt-7"
-        src="/blog-1.png"
-        alt="Blog thumbnail"
-        width={400}
-        height={340}
-      />
-
-      {data?.sections.map(({ heading, paragraph }, index) => (
-        <div key={index} className="max-w-[1000px]">
-          <h2 className="font-bold text-2xl pt-7">
-            {heading}
+      <div className="flex gap-4 max-[1024px]:flex-col">
+        <div>
+          <h2 className="font-bold text-3xl max-w-[1000px]">
+            {/* Taming the Torrent: How US Technology Can Help Malaysia Weather the
+            Flood */}
+            {data?.intro_text}
           </h2>
-          <p className="font-normal text-xl pt-3">
-            {paragraph}
-          </p>
+          <p className="font-normal text-xl pt-3">{data?.subtitle}</p>
+          <Image
+            className="pt-7"
+            src="/blog-1.png"
+            alt="Blog thumbnail"
+            width={400}
+            height={340}
+          />
+
+          {data?.sections.map(({ heading, paragraph }, index) => (
+            <div key={index} className="max-w-[1000px]">
+              <h2 className="font-bold text-2xl pt-7">{heading}</h2>
+              <p className="font-normal text-xl pt-3">{paragraph}</p>
+            </div>
+          ))}
         </div>
-      ))}
+
+        <div className="flex flex-col overflow-auto h-fit gap-5 mt-40">
+          <div className="flex gap-5">
+            <div className="w-32">
+              <Image
+                className=" aspect-auto"
+                src="/blog-1.png"
+                alt="blog image"
+                width={400}
+                height={340}
+              />
+            </div>
+            <div>
+              <h1 className="font-bold text-lg">Blog 1</h1>
+              <p className="font-normal text-sm pt-3">Blog Description</p>
+            </div>
+          </div>
+          <div className="flex gap-5">
+            <div className="w-32">
+              <Image
+                className=" aspect-auto"
+                src="/blog-1.png"
+                alt="blog image"
+                width={400}
+                height={340}
+              />
+            </div>
+            <div>
+              <h1 className="font-bold text-lg">Blog 2</h1>
+              <p className="font-normal text-sm pt-3">Blog Description</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

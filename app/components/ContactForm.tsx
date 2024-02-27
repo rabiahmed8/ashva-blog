@@ -2,28 +2,31 @@
 import React, { useState } from "react";
 import { contactForm } from "../apiCalls/apiCalls";
 import { Details } from "../constants/DTO";
-
-
+import { motion } from "framer-motion";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const BASE_URL_3 = 'https://ashva.pythonanywhere.com/waitlist';
+  const BASE_URL_3 = "https://ashva.pythonanywhere.com/waitlist";
 
-  const details:Details = {
+  const details: Details = {
     fname: name,
     email: email,
-    suggestion: message
+    suggestion: message,
   };
 
-  const handleClick = async () =>{
-    await contactForm(BASE_URL_3,details)
-    setName('')
-    setEmail('')
-    setMessage('')
-  }
+  const handleClick = async () => {
+    if (name !== '' && email !== '' && message !== ''){
+      await contactForm(BASE_URL_3, details);
+    }else{
+      window.alert("Fill the form before submitting")
+    }
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
 
   return (
     <div id="contact" className="py-20">
@@ -62,7 +65,27 @@ const ContactForm = () => {
         />
 
         {/* hover:border-2 hover:border-black hover:bg-white hover:text-black */}
-        <button onClick={handleClick} className="bg-[#1E1C1C] py-3 rounded-[20px] text-white  transition-all">Submit</button>
+        {/* <button
+          onClick={handleClick}
+          className="bg-[#1E1C1C] hover:bg-[#383838] py-3 rounded-[20px] text-white  transition-all"
+        >
+          Submit
+        </button> */}
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          onClick={handleClick}
+          className="bg-[#1E1C1C] hover:bg-[#383838] py-3 rounded-[20px] text-white"
+        >
+          Submit
+        </motion.button>
+        {/* <motion.div
+          className="bg-[#1E1C1C] py-3 rounded-[20px] text-white  transition-all"
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        /> */}
       </div>
     </div>
   );

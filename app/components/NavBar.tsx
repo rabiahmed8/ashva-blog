@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
 
@@ -92,9 +93,16 @@ const Navbar = () => {
 
       <Link
         href={"/#contact"}
-        className="bg-black text-white px-5 py-4 rounded-[20px] cursor-pointer"
+        className=""
+      >
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        className="bg-black text-white hover:bg-[#383838] px-5 py-4 rounded-[20px] cursor-pointer"
       >
         Share Your Initiative
+        </motion.div>
       </Link>
     </div>
   );

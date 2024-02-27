@@ -106,3 +106,36 @@ export const pinsData:PinContent[]=[
         "Attract and retain top talent by providing continuous learning and development opportunities through university partnerships.",
     },
   ];
+
+  export   const objectives = [
+    {
+      key: 0,
+      heading: "Facilitate Collaboration",
+      content:
+        "Connect young Malaysian innovators with local counterparts, industry leaders, and government agencies to accelerate the development and commercialization of their ideas.",
+    },
+    {
+      key: 1,
+      heading: "Offer Mentorship",
+      content:
+        "Provide guidance and support from experienced entrepreneurs and industry professionals, fostering a culture of innovation and entrepreneurship.",
+    },
+    {
+      key: 2,
+      heading: "Technology Transfer",
+      content:
+        "Bridge the gap between cutting-edge research at U.S. universities and real-world application in Malaysia, boosting the nation's technological advancement.",
+    },
+    {
+      key: 3,
+      heading: "Talent Repatriation",
+      content:
+        "Encourage young Malaysians to return and contribute their skills and expertise, enriching the local talent pool.",
+    },
+    {
+      key: 4,
+      heading: "Drive Economic Growth",
+      content:
+        "Foster the creation of innovative businesses and products, contributing to Malaysia's economic diversification and competitiveness.",
+    },
+  ];
