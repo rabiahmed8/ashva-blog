@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 
 const AboutSection = () => {
   const [objToggle, setObjToggle] = useState(0);
+  
 
   const objectives = [
     {
@@ -39,7 +40,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <div className="py-20">
+    <div id="about" className="py-20">
       {/* vision / Mission */}
       <div className="flex gap-20 flex-wrap">
         <div className="max-w-[30rem]">

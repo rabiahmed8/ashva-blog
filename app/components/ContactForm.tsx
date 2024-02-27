@@ -29,7 +29,7 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="py-20">
+    <div id="contact" className="py-20">
       <h1>Share your Initiative </h1>
       <div className="flex flex-col max-w-[600px] gap-3 pt-10">
         <div className="flex gap-3">

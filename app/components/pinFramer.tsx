@@ -3,14 +3,10 @@ import React, { createContext } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import ToolTip from "./ToolTip";
+import { PinContent } from "../constants/DTO";
 
-export interface PinContent {
-  key?: number;
-  className: string;
-  message: string;
-}
 
-const PinFramer = ({ key, className, message }: PinContent) => {
+const PinFramer = ({ message }: PinContent) => {
   // const PinFramer = () => {
   return (
     <>

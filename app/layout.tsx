@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="">
+    <html className='scroll-smooth' lang="en" >
       <body className={nunito.className}>
         {/* <Nav /> */}
         <Navbar />

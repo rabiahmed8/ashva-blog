@@ -20,8 +20,8 @@ const BlogSection = () => {
 
   useEffect(() => {
     getBlogList(base_url).then((data) => {
-      console.log("getBlogList", data);
-      console.log("getBlog", data[0].title);
+      // console.log("getBlogList", data);
+      // console.log("getBlog", data[0].title);
       setBlogData(data);
     });
 

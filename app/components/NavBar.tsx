@@ -1,49 +1,25 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { ReactNode, createContext, useRef } from 'react';
+import { usePathname } from "next/navigation";
+import { ReactNode, createContext, useRef } from "react";
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-interface LinkItem {
-  id: string;
-  link: string;
-  href: string;
-}
-interface NavbarRefs {
-  aboutRef: React.MutableRefObject<HTMLDivElement | null>;
-  homeRef: React.MutableRefObject<HTMLDivElement | null>;
-  contactRef: React.MutableRefObject<HTMLDivElement | null>;
-}
-
-const NavbarContext = createContext<NavbarRefs | null>(null);
-
-interface NavbarProviderProps {
-  children: ReactNode;
-}
-
-export const NavbarProvider: React.FC<NavbarProviderProps> = ({ children }) => {
-  const aboutRef = useRef<HTMLDivElement>(null);
-  const homeRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
-
-  const refs = { aboutRef, homeRef, contactRef };
-
-  return <NavbarContext.Provider value={refs}>{children}</NavbarContext.Provider>;
-};
-
-
 const Navbar = () => {
+  const pathname = usePathname();
+  console.log(pathname)
+
+  const [linkClass,setLinkClass]=useState('/#home')
 
   const scrollToRef = (ref: React.RefObject<HTMLDivElement>) => {
     if (ref.current) {
       window.scrollTo({
         top: ref.current.offsetTop,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
   };
-
 
   // const handleClick = (link: string) => {
   //   switch (link) {
@@ -67,12 +43,12 @@ const Navbar = () => {
     {
       id: 1,
       link: "home",
-      href: "/",
+      href: "/#home",
     },
     {
       id: 2,
       link: "about",
-      href: "/",
+      href: "/#about",
     },
     {
       id: 3,
@@ -82,7 +58,7 @@ const Navbar = () => {
     {
       id: 4,
       link: "contact",
-      href: "/",
+      href: "/#contact",
     },
   ];
 
@@ -105,7 +81,10 @@ const Navbar = () => {
                   className="px-4 cursor-pointer capitalize py-6 font-medium text-xl"
                   // onClick={() => handleClick(link)}
                 >
-                  <Link onClick={() => setNav(!nav)} href={href}>
+                  <Link
+                    onClick={() => setNav(!nav)}
+                    href={href}
+                  >
                     {link}
                   </Link>
                 </li>
@@ -128,14 +107,25 @@ const Navbar = () => {
             key={id}
             className="nav-links px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-black duration-200 link-underline"
           >
-            <Link href={href}>{link}</Link>
+            <Link
+            onClick={()=>setLinkClass(`${href}`)}
+              className={`${
+                linkClass == href ? "text-black" : "text-[#8C8C8C]"
+              }`}
+              href={href}
+            >
+              {link}
+            </Link>
           </li>
         ))}
       </ul>
 
-      <div className="bg-black text-white px-5 py-4 rounded-[20px] cursor-pointer">
+      <Link
+        href={"#contact"}
+        className="bg-black text-white px-5 py-4 rounded-[20px] cursor-pointer"
+      >
         Share Your Initiative
-      </div>
+      </Link>
     </div>
   );
 };

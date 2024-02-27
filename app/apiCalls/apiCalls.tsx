@@ -36,13 +36,13 @@ export async function contactForm(base_url:string, details:Details) {
     try {
         axios.post(base_url, { details })
         .then(response => {
-          console.log(response.data);
+          window.alert("Thankyou for joining the waitlist");
         })
         .catch(error => {
           console.error(error);
         });
     } catch (error) {
-        console.error('Error fetching blog content:', error);
+        console.error('Error sending data: ', error);
     }
 }
 
