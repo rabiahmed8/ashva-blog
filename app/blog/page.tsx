@@ -21,15 +21,15 @@ const Blog = () => {
   }, []);
 
   return (
-    <div className="px-40 max-[1440px]:px-20 max-[1024px]:px-4 pt-36">
+    <div className="px-40 pt-36 max-[1440px]:px-20 max-[1024px]:px-4">
       <div className="flex gap-4 max-[1024px]:flex-col">
         <div>
-          <h2 className="font-bold text-3xl max-w-[1000px]">
+          <h2 className="max-w-[1000px] text-3xl font-bold">
             {/* Taming the Torrent: How US Technology Can Help Malaysia Weather the
             Flood */}
             {data?.intro_text}
           </h2>
-          <p className="font-normal text-xl pt-3">{data?.subtitle}</p>
+          <p className="pt-3 text-xl font-normal">{data?.subtitle}</p>
           <Image
             className="pt-7"
             src="/blog-1.png"
@@ -40,13 +40,13 @@ const Blog = () => {
 
           {data?.sections.map(({ heading, paragraph }, index) => (
             <div key={index} className="max-w-[1000px]">
-              <h2 className="font-bold text-2xl pt-7">{heading}</h2>
-              <p className="font-normal text-xl pt-3">{paragraph}</p>
+              <h2 className="pt-7 text-2xl font-bold">{heading}</h2>
+              <p className="pt-3 text-xl font-normal">{paragraph}</p>
             </div>
           ))}
         </div>
 
-        <div className="flex flex-col overflow-auto h-fit gap-5 mt-40">
+        <div className="mt-40 flex h-fit flex-col gap-5 overflow-auto">
           <div className="flex gap-5">
             <div className="w-32">
               <Image
@@ -58,8 +58,8 @@ const Blog = () => {
               />
             </div>
             <div>
-              <h1 className="font-bold text-lg">Blog 1</h1>
-              <p className="font-normal text-sm pt-3">Blog Description</p>
+              <h1 className="text-lg font-bold">Blog 1</h1>
+              <p className="pt-3 text-sm font-normal">Blog Description</p>
             </div>
           </div>
           <div className="flex gap-5">
@@ -73,8 +73,8 @@ const Blog = () => {
               />
             </div>
             <div>
-              <h1 className="font-bold text-lg">Blog 2</h1>
-              <p className="font-normal text-sm pt-3">Blog Description</p>
+              <h1 className="text-lg font-bold">Blog 2</h1>
+              <p className="pt-3 text-sm font-normal">Blog Description</p>
             </div>
           </div>
         </div>

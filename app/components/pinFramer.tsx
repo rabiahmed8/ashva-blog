@@ -5,7 +5,6 @@ import Image from "next/image";
 import ToolTip from "./ToolTip";
 import { PinContent } from "../constants/DTO";
 
-
 const PinFramer = ({ message }: PinContent) => {
   // const PinFramer = () => {
   return (

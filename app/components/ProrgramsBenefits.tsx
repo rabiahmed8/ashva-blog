@@ -2,31 +2,30 @@ import React from "react";
 import { benefitsData, programsData } from "../constants/data";
 
 const ProrgramsBenefits = () => {
-
   return (
     <div className="py-20">
       <h1>Programs</h1>
-      <div className="flex gap-x-11 gap-y-9 flex-wrap pt-10">
+      <div className="flex flex-wrap gap-x-11 gap-y-9 pt-10">
         {programsData.map(({ key, heading, content }) => (
           <div
             key={key}
-            className="flex flex-col bg-[#D9D9D9] rounded-xl px-10 py-14 max-w-[450px] aspect-square justify-between"
+            className="flex aspect-square max-w-[450px] flex-col justify-between rounded-xl bg-[#D9D9D9] px-10 py-14"
           >
-            <p className="text-2xl font-normal text-center">{heading}</p>
-            <p className="text-lg font-normal text-center">{content}</p>
+            <p className="text-center text-2xl font-normal">{heading}</p>
+            <p className="text-center text-lg font-normal">{content}</p>
           </div>
         ))}
       </div>
 
       <h1 className="pt-40">Benefits for Malaysia</h1>
-      <div className="flex gap-x-11 gap-y-9 flex-wrap pt-10 pb-20">
+      <div className="flex flex-wrap gap-x-11 gap-y-9 pb-20 pt-10">
         {benefitsData.map(({ key, heading, content }) => (
           <div
             key={key}
-            className="flex flex-col bg-[#D9D9D9] rounded-xl px-10 py-14 max-w-[450px] aspect-square justify-between"
+            className="flex aspect-square max-w-[450px] flex-col justify-between rounded-xl bg-[#D9D9D9] px-10 py-14"
           >
-            <p className="text-2xl font-normal text-center">{heading}</p>
-            <p className="text-lg font-normal text-center">{content}</p>
+            <p className="text-center text-2xl font-normal">{heading}</p>
+            <p className="text-center text-lg font-normal">{content}</p>
           </div>
         ))}
       </div>

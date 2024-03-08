@@ -18,10 +18,10 @@ const ContactForm = () => {
   };
 
   const handleClick = async () => {
-    if (name !== '' && email !== '' && message !== ''){
+    if (name !== "" && email !== "" && message !== "") {
       await contactForm(BASE_URL_3, details);
-    }else{
-      window.alert("Fill the form before submitting")
+    } else {
+      window.alert("Fill the form before submitting");
     }
     setName("");
     setEmail("");
@@ -31,13 +31,13 @@ const ContactForm = () => {
   return (
     <div id="contact" className="py-20">
       <h1>Share your Initiative </h1>
-      <div className="flex flex-col max-w-[600px] gap-3 pt-10">
+      <div className="flex max-w-[600px] flex-col gap-3 pt-10">
         <div className="flex gap-3">
           <input
             type="text"
             value={name}
             placeholder="Name"
-            className="border-2 border-black rounded-[20px] py-3 px-5 text-xl font-normal flex-grow w-full"
+            className="w-full flex-grow rounded-[20px] border-2 border-black px-5 py-3 text-xl font-normal"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setName(e.target.value);
             }}
@@ -46,7 +46,7 @@ const ContactForm = () => {
             type="text"
             value={email}
             placeholder="Email"
-            className="border-2 border-black rounded-[20px] py-3 px-5 text-xl font-normal flex-grow w-full"
+            className="w-full flex-grow rounded-[20px] border-2 border-black px-5 py-3 text-xl font-normal"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setEmail(e.target.value);
             }}
@@ -58,7 +58,7 @@ const ContactForm = () => {
           placeholder="What are you building/
               Any event you want to share /
               An Idea that needs funding"
-          className="border-2 border-black rounded-[20px] h-[170px] py-3 px-5 text-xl font-normal resize-none no-scrollbar"
+          className="no-scrollbar h-[170px] resize-none rounded-[20px] border-2 border-black px-5 py-3 text-xl font-normal"
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
             setMessage(e.target.value);
           }}
@@ -76,7 +76,7 @@ const ContactForm = () => {
           whileTap={{ scale: 0.9 }}
           transition={{ type: "spring", stiffness: 400, damping: 17 }}
           onClick={handleClick}
-          className="bg-[#1E1C1C] hover:bg-[#383838] py-3 rounded-[20px] text-white"
+          className="rounded-[20px] bg-[#1E1C1C] py-3 text-white hover:bg-[#383838]"
         >
           Submit
         </motion.button>

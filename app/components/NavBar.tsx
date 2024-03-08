@@ -3,11 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const Navbar = () => {
-
-  const [linkClass,setLinkClass]=useState('/#home')
+  const [linkClass, setLinkClass] = useState("/#home");
   const [nav, setNav] = useState(false);
 
   const links = [
@@ -34,28 +33,25 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="z-[9999] flex justify-between items-center py-5 px-40 max-[1440px]:px-20 max-[1024px]:px-4 w-full h-20 text-black bg-white fixed nav">
+    <div className="nav fixed z-[9999] flex h-20 w-full items-center justify-between bg-white px-40 py-5 text-black max-[1440px]:px-20 max-[1024px]:px-4">
       <div>
         <div className="flex items-center">
           <div
             onClick={() => setNav(!nav)}
-            className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden"
+            className="z-10 cursor-pointer pr-4 text-gray-500 md:hidden"
           >
             {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
           </div>
 
           {nav && (
-            <ul className="flex flex-col justify-center items-center  text-white absolute top-[70px] left-[20px] bg-black rounded-lg">
+            <ul className="absolute left-[20px] top-[70px] flex  flex-col items-center justify-center rounded-lg bg-black text-white">
               {links.map(({ id, link, href }) => (
                 <li
                   key={id}
-                  className="px-4 cursor-pointer capitalize py-6 font-medium text-xl"
+                  className="cursor-pointer px-4 py-6 text-xl font-medium capitalize"
                   // onClick={() => handleClick(link)}
                 >
-                  <Link
-                    onClick={() => setNav(!nav)}
-                    href={href}
-                  >
+                  <Link onClick={() => setNav(!nav)} href={href}>
                     {link}
                   </Link>
                 </li>
@@ -68,7 +64,7 @@ const Navbar = () => {
             width={40}
             height={40}
           />
-          <h2 className="font-bold ml-8 text-4xl max-[570px]:hidden">Ashva</h2>
+          <h2 className="ml-8 text-4xl font-bold max-[570px]:hidden">Ashva</h2>
         </div>
       </div>
 
@@ -76,10 +72,10 @@ const Navbar = () => {
         {links.map(({ id, link, href }) => (
           <li
             key={id}
-            className="nav-links px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-black duration-200 link-underline"
+            className="nav-links link-underline cursor-pointer px-4 font-medium capitalize text-gray-500 duration-200 hover:scale-105 hover:text-black"
           >
             <Link
-            onClick={()=>setLinkClass(`${href}`)}
+              onClick={() => setLinkClass(`${href}`)}
               className={`${
                 linkClass == href ? "text-black" : "text-[#8C8C8C]"
               }`}
@@ -91,17 +87,14 @@ const Navbar = () => {
         ))}
       </ul>
 
-      <Link
-        href={"/#contact"}
-        className=""
-      >
-      <motion.div
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        className="bg-black text-white hover:bg-[#383838] px-5 py-4 rounded-[20px] cursor-pointer"
-      >
-        Share Your Initiative
+      <Link href={"/#contact"} className="">
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          className="cursor-pointer rounded-[20px] bg-black px-5 py-4 text-white hover:bg-[#383838]"
+        >
+          Share Your Initiative
         </motion.div>
       </Link>
     </div>

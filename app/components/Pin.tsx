@@ -1,16 +1,22 @@
 import Image from "next/image";
 import React from "react";
 
-const Pin = ({ key, lat, long }: {key: number;lat: number;long: number }) => {
-
+const Pin = ({
+  key,
+  lat,
+  long,
+}: {
+  key: number;
+  lat: number;
+  long: number;
+}) => {
   return (
     <div
       key={key}
-      className={`top size-5 test`}
+      className={`top test size-5`}
 
       // className={`absolute top size-5 test`}
       // style={{ top: lat, left: long }}
-
     >
       <Image
         className="pin"

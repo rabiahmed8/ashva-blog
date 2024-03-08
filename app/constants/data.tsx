@@ -1,6 +1,6 @@
 import { PinContent } from "./DTO";
 
-export const pinsData:PinContent[]=[
+  export const pinsData:PinContent[]=[
     { key: 0, className: "washington", message: "Washington" },
     { key: 1, className: "Berkeley", message: "Berkeley" },
     { key: 2, className: "Stanford", message: "Stanford" },

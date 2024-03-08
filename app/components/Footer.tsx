@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="px-40 max-[1440px]:px-20 bg-black h-[500px] mt-20">
-      <p className="text-[#8C8C8C] pt-24 text-xl font-bold">
+    <div className="mt-20 h-[500px] bg-black px-40 max-[1440px]:px-20">
+      <p className="pt-24 text-xl font-bold text-[#8C8C8C]">
         San Francisco, California, USA <br></br>
         February 2024<br></br>
         <br></br>

@@ -5,17 +5,14 @@ import { objectives } from "../constants/data";
 
 const AboutSection = () => {
   const [objToggle, setObjToggle] = useState(0);
-  
-
-
 
   return (
     <div id="about" className="py-20">
       {/* vision / Mission */}
-      <div className="flex gap-20 flex-wrap">
+      <div className="flex flex-wrap gap-20">
         <div className="max-w-[30rem]">
-          <h1 className="font-bold text-5xl">Vision</h1>
-          <p className="font-normal text-2xl pt-6">
+          <h1 className="text-5xl font-bold">Vision</h1>
+          <p className="pt-6 text-2xl font-normal">
             To be a <span className="text-3xl text-[#EE8C19]">vibrant hub</span>{" "}
             connecting young{" "}
             <span className="text-3xl text-[#EE8C19]">Malaysian graduates</span>{" "}
@@ -27,8 +24,8 @@ const AboutSection = () => {
           </p>
         </div>
         <div className="max-w-[30rem]">
-          <h1 className="font-bold text-5xl">Mission</h1>
-          <p className="font-normal text-2xl pt-6">
+          <h1 className="text-5xl font-bold">Mission</h1>
+          <p className="pt-6 text-2xl font-normal">
             To attract, nurture, and support{" "}
             <span className="text-3xl text-[#EE8C19]">
               young Malaysian innovators
@@ -53,7 +50,7 @@ const AboutSection = () => {
             }}
             className={`${objToggle == key ? "bg-black text-white" : ""}
               ${key == 0 ? "first-button" : ""}
-              flex  items-end py-4 px-3 flex-grow place-content-center border-[3px] border-black text-lg font-medium cursor-pointer transition-all`}
+              flex  flex-grow cursor-pointer place-content-center items-end border-[3px] border-black px-3 py-4 text-lg font-medium transition-all`}
           >
             {heading}{" "}
             <span
